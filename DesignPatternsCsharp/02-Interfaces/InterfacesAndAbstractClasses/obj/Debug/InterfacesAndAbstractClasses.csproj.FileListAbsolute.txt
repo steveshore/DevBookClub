@@ -1,0 +1,1 @@
+C:\GitHub\DevBookClub\DesignPatternsCsharp\02-Interfaces\InterfacesAndAbstractClasses\bin\Debug\InheritanceInterfacesAndDelegates.exe.config
