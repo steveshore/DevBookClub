@@ -1,36 +1,44 @@
 ﻿using System;
-using InterfacesAndAbstractClasses.Models;
 
 namespace InterfacesAndAbstractClasses
 {
 
     public class Lunch
     {
-        private static IOrderService OrderServiceFactory(){
-            return new OrderService();
-        }
 
         public static void Main(string[] args)
         {
-             IOrderService _order = OrderServiceFactory();
+            var meal = GetMeal();
+            IOrder order;
 
-            var meal = _order.GetMealDeal();
-            if (meal.Entree == "sandwich")
+            if (meal == "lunch")
             {
-                meal = _order.GetSandwich(meal);
-                _order.PrintSandwichOrder((SandwichDeal)meal);
+                order = new LunchDeal();
+                var mealOrder = order.GetOrder();
+                order.PrintOrder(mealOrder);
+            }
 
-            }
-            else if (meal.Entree == "burrito")
+            if (meal == "dinner")
             {
-                meal = _order.GetBurrito(meal);
-                _order.PrintBurritoOrder((BurritoDeal)meal);
+                order = new DinnerDeal();
+                var mealOrder = order.GetOrder();
+                order.PrintOrder(mealOrder);
             }
-            else
+
+        }
+
+        public static string GetMeal()
+        {
+            Console.Write("Would you like Lunch or Dinner?:\n");
+            var meal = Console.ReadLine().ToLower().Trim();
+
+            if (meal == "lunch" || meal == "dinner")
             {
-                Console.Write("Your spelling's not great. Try again:\n");
-                meal = _order.GetMealDeal();
+                return meal;
             }
+
+            Console.Write("That's not a meal. Try again...\n\n");
+            return GetMeal();
         }
     }
 }

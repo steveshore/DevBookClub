@@ -7,7 +7,7 @@
     <ProjectGuid>{423A7270-507E-43B8-9EBB-77EACCD76F21}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InheritanceAndInterfaces</RootNamespace>
+    <RootNamespace>InterfacesAndAbstractClasses</RootNamespace>
     <AssemblyName>InheritanceInterfacesAndDelegates</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,11 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOrderService.cs" />
-    <Compile Include="Models\BurritoDeal.cs" />
-    <Compile Include="Models\MealDeal.cs" />
-    <Compile Include="Models\SandwichDeal.cs" />
-    <Compile Include="OrderService.cs" />
+    <Compile Include="DinnerDeal.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="LunchDeal.cs" />
+    <Compile Include="MealDeal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
