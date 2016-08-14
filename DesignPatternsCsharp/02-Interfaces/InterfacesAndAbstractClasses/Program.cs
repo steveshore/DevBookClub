@@ -2,39 +2,43 @@
 
 namespace InterfacesAndAbstractClasses
 {
-
     public class Lunch
     {
 
         public static void Main(string[] args)
         {
             var meal = GetMeal();
-            IOrder order;
 
             if (meal == "lunch")
             {
-                order = new LunchDeal();
+                var order = new LunchDeal();
                 var mealOrder = order.GetOrder();
                 order.PrintOrder(mealOrder);
             }
 
             if (meal == "dinner")
             {
-                order = new DinnerDeal();
+                var order = new DinnerDeal();
                 var mealOrder = order.GetOrder();
                 order.PrintOrder(mealOrder);
             }
 
         }
 
+        //Determines what meal the user wants
         public static string GetMeal()
         {
             Console.Write("Would you like Lunch or Dinner?:\n");
-            var meal = Console.ReadLine().ToLower().Trim();
+            var meal = Console.ReadLine();
 
-            if (meal == "lunch" || meal == "dinner")
+            if (meal != null)
             {
-                return meal;
+                meal = meal.ToLower().Trim();
+
+                if (meal == "lunch" || meal == "dinner")
+                {
+                    return meal;
+                }
             }
 
             Console.Write("That's not a meal. Try again...\n\n");

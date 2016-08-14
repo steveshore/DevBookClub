@@ -42,9 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DinnerDeal.cs" />
-    <Compile Include="IOrder.cs" />
     <Compile Include="LunchDeal.cs" />
-    <Compile Include="MealDeal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
